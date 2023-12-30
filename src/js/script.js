@@ -227,7 +227,9 @@ class AmountWidget {
     //if(newValue >= 0 && newValue <= 10 && typeof newValue != 'string') {
     //  thisWidget.value = newValue;
     //}
-    if(thisWidget.value !== newValue && !isNaN(newValue)) {
+    if(thisWidget.value !== newValue && !isNaN(newValue) && 
+    newValue >= settings.amountWidget.defaultMin && 
+    newValue <= settings.amountWidget.defaultMax) {
       thisWidget.value = newValue;
     }
     
