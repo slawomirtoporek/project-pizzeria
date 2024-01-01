@@ -389,7 +389,10 @@ class Cart {
 
     thisCart.dom.productList.appendChild(generatedDOM);
 
-    console.log('adding product', menuProduct);
+    // console.log('adding product', menuProduct);
+
+    thisCart.products.push(menuProduct);
+    console.log('cart', thisCart.products);
   }
 }
 
