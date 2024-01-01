@@ -243,7 +243,6 @@
 
     prepareCartProduct() {
       const thisProduct = this;
-      console.log('daneThis', this);
 
       const productSummary = {};
       
@@ -254,7 +253,7 @@
       productSummary.price = productSummary.priceSingle * productSummary.amount;
 
       productSummary.params = thisProduct.prepareCartProductParams();
-      
+
       return productSummary;
     }
 
@@ -298,8 +297,8 @@ class AmountWidget {
   
     thisWidget.initActions();
 
-    console.log('AmountWidget', thisWidget);
-    console.log('constructor arguments:', element);
+    // console.log('AmountWidget', thisWidget);
+    // console.log('constructor arguments:', element);
   }
 
   getElements(element){
@@ -371,7 +370,8 @@ class Cart {
 
     thisCart.dom.wrapper = element;
     thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
-  }
+    thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList)
+  } 
 
   initActions() {
     const thisCart = this;
@@ -381,7 +381,13 @@ class Cart {
   }
 
   add(menuProduct) {
-    //const thisCart = this;
+    const thisCart = this;
+
+    const generatedHTML = templates.cartProduct(menuProduct);
+
+    const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+
+    thisCart.dom.productList.appendChild(generatedDOM);
 
     console.log('adding product', menuProduct);
   }
