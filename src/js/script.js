@@ -389,10 +389,39 @@ class Cart {
 
     thisCart.dom.productList.appendChild(generatedDOM);
 
-    // console.log('adding product', menuProduct);
+    console.log('generatedDom', generatedDOM);
+    thisCart.products.push(menuProduct, new CartProduct(menuProduct, generatedDOM));
 
-    thisCart.products.push(menuProduct);
     console.log('cart', thisCart.products);
+  }
+}
+
+class CartProduct {
+  constructor (menuProduct, element) {
+    const thisCartProduct = this;
+
+    thisCartProduct.id = menuProduct.id;
+    thisCartProduct.name = menuProduct.name;
+    thisCartProduct.amount = menuProduct.amount;
+    thisCartProduct.params = menuProduct.params;
+    thisCartProduct.price = menuProduct.price;
+    thisCartProduct.priceSingle = menuProduct.priceSingle;
+
+    thisCartProduct.getElements = element;
+    
+    console.log(thisCartProduct);
+  }
+
+  getElements (element) {
+    const thisCartProduct = this;
+
+    thisCartProduct.dom = {};
+
+    thisCartProduct.dom.wrapper = element;
+    thisCartProduct.dom.amountWidget = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.amountWidget);
+    thisCartProduct.dom.price = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.price);
+    thisCartProduct.dom.edit = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.edit);
+    thisCartProduct.dom.remove = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.remove);
   }
 }
 
