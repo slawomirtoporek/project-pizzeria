@@ -105,7 +105,7 @@
       // console.log('generatedHTML', genratedHTML);
       /* generate HTML based on template */
       thisProduct.element = utils.createDOMFromHTML(genratedHTML);
-      console.log('element', thisProduct.element);
+      // console.log('element', thisProduct.element);
       /* create element using utils.createElementFromHTML */
       const menuContainer = document.querySelector(select.containerOf.menu);
       /* find menu container */
@@ -360,7 +360,7 @@ class Cart {
     thisCart.getElements(element);
     thisCart.initActions();
 
-    console.log('new Cart', thisCart);
+    // console.log('new Cart', thisCart);
   }
 
   getElements(element) {
@@ -389,10 +389,10 @@ class Cart {
 
     thisCart.dom.productList.appendChild(generatedDOM);
 
-    console.log('generatedDom', generatedDOM);
+    // console.log('generatedDom', generatedDOM);
     thisCart.products.push(menuProduct, new CartProduct(menuProduct, generatedDOM));
 
-    console.log('cart', thisCart.products);
+    // console.log('cart', thisCart.products);
   }
 }
 
@@ -444,7 +444,7 @@ class CartProduct {
 
     initMenu: function(){
       const thisApp = this;
-      console.log('thisApp.data:', thisApp.data);
+      // console.log('thisApp.data:', thisApp.data);
       for(let productData in thisApp.data.products){
         new Product(productData, thisApp.data.products[productData]);
       }
@@ -464,11 +464,11 @@ class CartProduct {
 
     init: function(){
       const thisApp = this;
-      console.log('*** App starting ***');
-      console.log('thisApp:', thisApp);
-      console.log('classNames:', classNames);
-      console.log('settings:', settings);
-      console.log('templates:', templates);
+      // console.log('*** App starting ***');
+      // console.log('thisApp:', thisApp);
+      // console.log('classNames:', classNames);
+      // console.log('settings:', settings);
+      // console.log('templates:', templates);
 
       thisApp.initData();
       thisApp.initMenu();
