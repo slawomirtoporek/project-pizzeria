@@ -480,10 +480,24 @@ class Cart {
       subtotalPrice: thisCart.subtotalPrice,
       totalNumber: thisCart.totalNumber,
       deliveryFee: thisCart.deliveryFee,
-      products: thisCart.products,
+      products: [],
     }
 
-    console.log(payload);
+    for (let prod of thisCart.products) {
+      payload.products.push(prod.getData());
+    }
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    };
+    
+    fetch(url, options);
+
+    console.log({payload});
   }
 }
 
