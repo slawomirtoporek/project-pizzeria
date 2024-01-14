@@ -46,7 +46,7 @@ import Booking from './components/Booking.js';
 
     /* add class 'active' to maching pages, remove from non-matching */
     for(let page of thisApp.pages){
-      console.log(pageId);
+      // console.log(pageId);
       page.classList.toggle(
         classNames.pages.active, 
         pageId == page.id
@@ -81,7 +81,7 @@ import Booking from './components/Booking.js';
         return rawResponse.json();
       })
       .then(function(parsedResponse){
-        console.log('parsedResponse', parsedResponse);
+        // console.log('parsedResponse', parsedResponse);
 
         /* save parsedResponse as thisApp.data.products */
         thisApp.data.products = parsedResponse;
@@ -89,7 +89,7 @@ import Booking from './components/Booking.js';
         thisApp.initMenu();
       });
 
-    console.log('thisApp.data', JSON.stringify(thisApp.data));
+    // console.log('thisApp.data', JSON.stringify(thisApp.data));
   },
 
   initCart: function() {
