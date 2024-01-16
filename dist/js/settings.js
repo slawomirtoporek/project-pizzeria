@@ -38,6 +38,9 @@ export const select = {
         input: 'input[type="range"]',
         output: '.output',
     },
+    tableSelect: {
+      wrapper: '.floor-plan',
+    },
   },
   booking: {
     peopleAmount: '.people-amount',
@@ -78,6 +81,8 @@ export const classNames = {
   booking: {
     loading: 'loading',
     tableBooked: 'booked',
+    tableSelected: 'selected',
+    table: 'table',
   },
   nav: {
       active: 'active',

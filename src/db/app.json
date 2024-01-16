@@ -261,9 +261,11 @@
          "date": "2024-01-21",
          "hour": "16:00",
          "table": 2,
+         "repeat": false,
          "duration": 4,
          "ppl": 3,
          "starters": []
        }
-    ]
+    ],
+    "booked": {}
 }
