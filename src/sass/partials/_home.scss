@@ -2,6 +2,12 @@
   background-color: $color-light;
   margin-top: 41px;
   padding-top: 71px;
+  border-radius: $radius;
+}
+
+a {
+  text-decoration: none;
+  color: $color-light;
 }
 
 .box-top {
@@ -13,7 +19,7 @@
   .box-order, .box-booking {
     flex-direction: row;
     flex-wrap: wrap;
-    border-radius: 4px;
+    border-radius: $radius;
     width: 299px;
     height: 119px;
     align-items: center;
@@ -31,14 +37,43 @@
     background: url("../images/home/pizza-2.jpg");
     background-size: cover;
   }
-}
 
+  .box-header.link{
+    width: 299px;
+    height: 120px;
+    font-size: 26px;
+    letter-spacing: -1px;
+    color: #ffffff;
+    font-weight: 700;
+    //font-family: "Oswald";
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 35px;
+    cursor: pointer;
+    &:hover{
+      margin-top: 10px;
+      transition: all 0.5s;
+    }
+    &:hover + .hidden-header {
+      display: block;
+      margin-top: -150px;
+      transition: all 0.5s;
+    }
+  }
+
+  .hidden-header {
+    display: none;
+    color: #ffffff;
+    font-size: 14px;
+  }
+}
 
 .box-bottom {
 
   display: flex;
   justify-content: center;
   text-align: center;
+
   .box-opening-hours {
     display: flex;
     width: 604px;
@@ -60,12 +95,6 @@
   }
 }
 
-.hidden-header {
-  display: none;
-  color: #ffffff;
-  font-size: 14px;
-}
-
 .box-header {
   font-size: 26px;
   letter-spacing: -1px;
@@ -76,25 +105,5 @@
   text-align: center;
 }
 
-.box-header.link{
-  width: 299px;
-  height: 120px;
-  font-size: 26px;
-  letter-spacing: -1px;
-  color: #ffffff;
-  font-weight: 700;
-  //font-family: "Oswald";
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 35px;
-  &:hover{
-    margin-top: 10px;
-    transition: all 0.5s;
-  }
-  &:hover + .hidden-header {
-    display: block;
-    margin-top: -150px;
-    transition: all 0.5s;
-  }
-}
+
 

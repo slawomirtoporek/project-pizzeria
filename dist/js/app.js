@@ -63,6 +63,26 @@ import Home from './components/Home.js';
     }
   },
 
+  homePageRedirection: function(){
+    const thisApp = this;
+
+    thisApp.redirectionPage = document.querySelectorAll(select.home.redirection);
+
+    for(let box of thisApp.redirectionPage){
+
+      box.addEventListener('click', function(event){
+        event.preventDefault();
+        
+        const link = box.querySelector('a');
+
+        if(link){
+          const id = link.getAttribute('href').replace('#', '');
+          thisApp.activatePage(id);
+        }
+      });
+    }
+  },
+
   initMenu: function(){
     const thisApp = this;
     // console.log('thisApp.data:', thisApp.data);
@@ -132,6 +152,7 @@ import Home from './components/Home.js';
     thisApp.initData();
     thisApp.initCart();
     thisApp.initBooking();
+    thisApp.homePageRedirection();
   },
 };
 

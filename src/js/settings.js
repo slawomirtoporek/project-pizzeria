@@ -56,6 +56,10 @@ export const select = {
     starters: '.checkbox input',
     duration: '[name="hours"]',
   },
+  home: {
+    redirection: '.box-header.link',
+    link: '.box-header.link a',
+  },
   nav: {
       links: '.main-nav a',
   },

@@ -6,7 +6,6 @@ class Home{
     const thisHome = this;
 
     thisHome.render(page);
-    thisHome.initWidgets();
   }
 
   render(){
@@ -21,5 +20,4 @@ class Home{
     container.appendChild(thisHome.element);
   }
 }
-
 export default Home;
