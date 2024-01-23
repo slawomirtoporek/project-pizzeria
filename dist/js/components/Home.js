@@ -5,7 +5,17 @@ class Home{
   constructor(page){
     const thisHome = this;
 
+    thisHome.getElements();
     thisHome.render(page);
+    // thisHome.initWidgets();
+  }
+
+  getElements(){
+    const thisHome = this;
+
+    thisHome.dom = {};
+
+    thisHome.dom.carousel = document.querySelector(select.carousel.wrapper);
   }
 
   render(){
@@ -19,5 +29,7 @@ class Home{
 
     container.appendChild(thisHome.element);
   }
+
 }
+
 export default Home;

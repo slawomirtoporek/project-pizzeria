@@ -5,10 +5,11 @@
   border-radius: $radius;
 }
 
-a {
-  text-decoration: none;
-  color: $color-light;
+.home-page {
+  padding: 0 25px;
 }
+
+/* Header box */
 
 .box-top {
   display: flex;
@@ -20,7 +21,7 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     border-radius: $radius;
-    width: 299px;
+    width: 50%;
     height: 119px;
     align-items: center;
     justify-content: center;
@@ -43,13 +44,19 @@ a {
     height: 120px;
     font-size: 26px;
     letter-spacing: -1px;
-    color: #ffffff;
-    font-weight: 700;
-    //font-family: "Oswald";
+    color: $color-light;
+    font-weight: $font-bold;
+    font-family: $font-header;
     text-transform: uppercase;
     text-align: center;
     margin-top: 35px;
     cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: $color-light;
+    }
+
     &:hover{
       margin-top: 10px;
       transition: all 0.5s;
@@ -63,23 +70,22 @@ a {
 
   .hidden-header {
     display: none;
-    color: #ffffff;
+    color: $color-light;
     font-size: 14px;
   }
 }
 
 .box-bottom {
-
   display: flex;
   justify-content: center;
   text-align: center;
 
   .box-opening-hours {
     display: flex;
-    width: 604px;
+    width: 100%;
     height: 120px;
     border-radius: 4px;
-    background-color: #ff6b6b;
+    background-color: $color-main;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -87,9 +93,9 @@ a {
 
   .opening-days {
     font-size: 14px;
-    color: #ffffff;
-    font-weight: 300;
-    //font-family: "Lato";
+    color: $color-light;
+    font-weight: $font-light;
+    font-family: $font-text;
     text-align: center;
     margin-top: -25px;
   }
@@ -98,12 +104,152 @@ a {
 .box-header {
   font-size: 26px;
   letter-spacing: -1px;
-  color: #ffffff;
-  font-weight: 700;
-  //font-family: "Oswald";
+  color: $color-light;
+  font-weight: $font-bold;
+  font-family: $font-header;
   text-transform: uppercase;
   text-align: center;
 }
 
+/* Carousel */
 
+.carousel {
+  margin: 0 auto;
+  margin-top: 103px;
+  margin-bottom: 128px;
+  background-color: $color-light;
 
+  .carousel-cell {
+    width: 100%;
+    min-height: 194px;
+    margin: 0 auto;
+    border-radius: $radius;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    .photo {
+      flex: 1;
+      width: 193px;
+      height: 193px;
+      margin-right: 40px;
+
+      img {
+        width: 194px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $radius;
+      }
+    }
+    
+    .comments {
+      flex: 2;
+      flex-wrap: wrap;
+
+      .comments-header {
+        font-size: 14px;
+        color: $color-dark;
+        font-weight: $font-bold;
+        font-family: $font-text;
+      }
+
+      .name {
+        font-size: 14px;
+        line-height: 23px;
+        color: $color-dark;
+        font-weight: $font-normal;
+        font-style: italic;
+        font-family: $font-text;
+      }
+      
+      .text {
+        font-size: 14px;
+        line-height: 23px;
+        color: $color-dark;
+        font-weight: $font-normal;
+        font-family: $font-text;
+      }
+    }
+  }
+}
+
+/* Gallery */
+
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  gap: 10px;
+
+  .photo-gallery {
+    height: 194px;
+    width: 194px;
+    position: relative;
+
+    .icons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+
+      a {
+        margin-right: 10px;
+      }
+
+      .fa-heart {
+        color: $color-light;
+        height: 35px;
+        font-size: 25px;
+        line-height: 23px;
+
+        &:hover {
+          color: $color-main;
+        }
+      }
+
+      .fa-share-nodes {
+        color: $color-light;
+        height: 35px;
+        font-size: 25px;
+        line-height: 23px;
+
+        &:hover {
+          color: $color-main;
+        } 
+      }
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: $radius;
+    }
+  }
+}
+
+.instagram-link {
+  padding-bottom: 76px;
+  padding-top: 30px;
+
+  a {
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: $font-normal;
+    font-family: $font-text;
+    color: $color-main;
+    text-decoration: underline;
+  }
+}
+
+.photo-gallery:hover {
+  opacity: 0.7;
+  .icons {
+    display: block;
+    cursor: pointer;
+    transition: 3s;
+  }
+}

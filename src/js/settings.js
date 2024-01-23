@@ -58,7 +58,9 @@ export const select = {
   },
   home: {
     redirection: '.box-header.link',
-    link: '.box-header.link a',
+  },
+  carousel: {
+    wrapper: '.main-carousel',
   },
   nav: {
       links: '.main-nav a',
